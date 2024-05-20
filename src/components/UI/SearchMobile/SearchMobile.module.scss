@@ -1,0 +1,25 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Search {
+  height: 42px;
+  display: flex;
+  align-items: center;
+}
+
+.Button {
+  background: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  svg {
+    stroke: $black;
+  }
+}
+
+.CloseButton {
+  margin-top: 3px;
+}

@@ -1,0 +1,20 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Modal {
+  .Title {
+    margin: 0 0 40px;
+  }
+
+  .Divider {
+    margin-bottom: 40px;
+  }
+
+  .SendButton {
+    margin-top: 20px;
+  }
+
+  .CloseButton {
+    margin-top: 25px;
+  }
+}

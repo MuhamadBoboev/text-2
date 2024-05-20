@@ -1,0 +1,239 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Top {
+  background: #fff;
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 54px;
+  }
+}
+
+.Header {
+  padding: 24px 0;
+  position: relative;
+  z-index: 3;
+  background: #fff;
+
+  @media (max-width: $desktop) {
+    padding: 16px 0;
+  }
+
+  @media (max-width: $tablet) {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (max-width: $mobileLarge) {
+    padding: 10px 0;
+    z-index: 51;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+
+  .Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: $desktop) and (min-width: $tablet + 1px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: $mobileLarge) {
+      justify-content: center;
+    }
+  }
+
+  .SearchInput {
+    flex-basis: 36.59%;
+
+    @media (max-width: $tablet) {
+      flex-basis: 53.45%;
+    }
+
+    @media (max-width: $mobileLarge) {
+      position: absolute;
+      z-index: 1;
+      background: #fff;
+      max-width: 240px;
+    }
+  }
+}
+
+.Logo {
+  @media (max-width: $desktop) {
+    img {
+      width: 100px;
+      height: auto;
+    }
+  }
+
+  @media (max-width: $mobileLarge) {
+    img {
+      width: 90px;
+    }
+  }
+}
+
+.User {
+  stroke: $secondary;
+}
+
+.ButtonCategory {
+  padding: 11px 24px;
+  box-sizing: border-box;
+  background: none;
+  border: 1px solid $gray3;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: $gray;
+  cursor: pointer;
+  margin: 0 28px 0 40px;
+
+  svg {
+    margin-right: 8px;
+    fill: $grayHead;
+    stroke: $grayHead;
+  }
+
+  @media (max-width: $desktop) {
+    border-color: #d7d7d7;
+    //color: $primary;
+    padding: 8px 16px;
+    margin: 0 16px 0 28px;
+
+    svg {
+      //stroke: $primary;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.HideSearch {
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Buttons {
+  display: flex;
+  flex-grow: 1;
+  margin: 0 32px;
+
+  @media (max-width: $desktop) {
+    margin-left: 24px;
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.Certificate,
+.Favorites,
+.Cart,
+.Login {
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 32px;
+  @include miniText {
+    color: $black;
+  }
+
+  @media (max-width: $desktop) {
+    margin-right: 24px;
+  }
+
+  &:hover {
+    color: $gray;
+
+    svg {
+      fill: $gray;
+      stroke: $gray;
+    }
+  }
+
+  svg {
+    display: block;
+    margin: 0 auto 4px;
+  }
+}
+
+.Favorites {
+  svg {
+    stroke: none !important;
+  }
+
+  &:hover {
+    svg {
+      stroke: none !important;
+    }
+  }
+}
+
+.Login {
+  margin-right: 0;
+  color: $primary;
+
+  &:hover {
+    color: $gray;
+
+    svg {
+      stroke: $gray;
+    }
+  }
+
+  svg {
+    stroke: $primary;
+  }
+}
+
+.Profile {
+  color: $secondary;
+
+  svg {
+    fill: $secondary;
+    stroke: $secondary;
+  }
+}
+
+.LeftButton {
+  @media (max-width: $mobileLarge) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+  }
+}
+
+.RightButton {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+
+  @media (max-width: $mobileLarge) {
+    display: block;
+  }
+}
+
+.HideHide {
+  @media (max-width: $mobileLarge) {
+    opacity: 0;
+  }
+}

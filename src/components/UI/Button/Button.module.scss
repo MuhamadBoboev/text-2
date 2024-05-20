@@ -1,0 +1,166 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Button {
+  background: $primary;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: $radius;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 24px;
+  cursor: pointer;
+  transition-duration: 100ms;
+  text-decoration: none;
+  transition-property: background-color, color;
+  box-sizing: border-box;
+  text-align: center;
+
+  &:hover {
+    background: $gray;
+  }
+
+  &:active {
+    background: $black;
+  }
+
+  &:disabled {
+    background: #e7e8e9;
+    color: #9fa3a9;
+    cursor: not-allowed;
+  }
+}
+
+.Grow {
+  width: 100%;
+}
+
+.More {
+  background: transparent;
+  color: $black;
+  border-radius: 4px;
+  padding: 10px 0;
+  min-width: auto;
+
+  &:hover {
+    @media (min-width: $tablet+1px) {
+      color: $gray;
+      background: transparent;
+    }
+  }
+
+  &:active {
+    @media (min-width: $tablet+1px) {
+      background: transparent;
+      color: darken($black, 15%);
+    }
+  }
+
+  &:disabled {
+    color: #9fa3a9;
+    background: transparent;
+  }
+
+  @media (max-width: $tablet) {
+    background: $primary;
+    border-radius: $radius;
+    color: #fff !important;
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.078px;
+    padding: 7px 12px;
+    min-width: 156px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    width: 100%;
+    max-width: none;
+    color: #fff;
+    padding: 14px;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+  }
+}
+
+//Paddings
+
+.Padding12 {
+  padding: 12px 40px;
+}
+
+.Padding10 {
+  padding: 10px 40px;
+}
+
+//Backgrounds
+
+.Transparent {
+  background: transparent;
+
+  &:hover {
+    background: transparent;
+    color: #e1955d;
+  }
+
+  &:active {
+    background: transparent;
+    color: darken(#e1955d, 15%);
+  }
+
+  &:disabled {
+    background: transparent;
+    color: #9fa3a9;
+    cursor: not-allowed;
+  }
+}
+
+//Colors
+.BlackColor {
+  color: $black;
+}
+
+.SecondaryColor {
+  color: $secondary;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+//Borders
+.Border {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.BorderWhite {
+  border-color: #fff;
+  padding: 15px 40px;
+}
+
+.BorderBlack {
+  border-color: $black;
+}
+
+.BorderGray {
+  border-color: $grayLight;
+}
+
+.BorderSecondary {
+  border-color: $secondary;
+}
+
+.Padding12.Border {
+  padding: 11px 40px;
+}
+
+.Padding10.Border {
+  padding: 9px 40px;
+}

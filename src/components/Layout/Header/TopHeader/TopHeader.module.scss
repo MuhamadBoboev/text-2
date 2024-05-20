@@ -1,0 +1,77 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Top {
+  background: $whiteGray;
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+}
+
+.Right {
+  display: flex;
+  align-items: center;
+}
+
+.Phone {
+  text-decoration: none;
+  color: $black;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  @include miniText;
+
+  svg {
+    margin-right: 6px;
+    fill: none;
+    stroke: $black;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.Working {
+  display: inline-flex;
+  align-items: center;
+  color: $black;
+  margin-right: 20px;
+  @include miniText;
+
+  svg {
+    fill: none;
+    stroke: $black;
+    margin-right: 4px;
+  }
+}
+
+.Call {
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  @include miniText;
+  color: $black;
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    stroke: $black;
+    margin-right: 6px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

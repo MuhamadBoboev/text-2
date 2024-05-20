@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.List {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Item {
+  margin-bottom: 16px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 12px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.Link {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 200ms;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &:hover {
+    color: $primary;
+  }
+}

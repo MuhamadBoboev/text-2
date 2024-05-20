@@ -1,0 +1,86 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Title {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 800;
+  margin: 100px 0;
+}
+
+.List {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  justify-content: space-between;
+  grid-column-gap: 1%;
+  grid-row-gap: 16px;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: repeat(3, 32%);
+  }
+
+  @media (max-width: $desktop) {
+    grid-column-gap: 1.9%;
+    //grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(160px, 260px));
+  }
+
+  @media (max-width: 840px) {
+    grid-template-columns: repeat(3, 32%);
+    grid-column-gap: 2%;
+    grid-row-gap: 16px;
+    justify-content: center;
+  }
+
+  @media (max-width: $tablet) {
+    grid-template-columns: repeat(3, minmax(160px, 192px));
+    grid-row-gap: 14px;
+  }
+
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(2, minmax(160px, 192px));
+    grid-row-gap: 10px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    grid-template-columns: repeat(2, minmax(120px, 192px));
+    grid-row-gap: 8px;
+  }
+
+  @media (max-width: $mobileSmall) {
+    grid-template-columns: 192px;
+    justify-content: center;
+  }
+}
+
+.Empty {
+  margin-top: 160px;
+  margin-bottom: 80px;
+}
+
+.EmptyTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+}
+
+.EmptySubtitle {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 28px;
+  color: $gray;
+  text-align: center;
+}
+
+.Button {
+  display: block;
+  margin: 40px auto 0;
+  width: fit-content;
+}

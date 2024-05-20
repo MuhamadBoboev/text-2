@@ -1,0 +1,49 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Footer {
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.Line {
+  width: 100%;
+  height: 1px;
+  background: $secondary;
+  margin: 0 0 20px;
+}
+
+.List {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+
+.Item {
+  margin-bottom: 12px;
+}
+
+.Link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  background: none;
+  color: $black;
+  border: none;
+  margin: 0;
+  font-family: 'SF Pro Text', sans-serif;
+  letter-spacing: -0.408px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  padding: 12px 0;
+  border-bottom: 1px solid $grayLight;
+  width: 100%;
+  text-align: left;
+
+  svg {
+    stroke: $primary;
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,247 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.ModalHeader {
+  .Title {
+    margin: 0;
+  }
+
+  .Divider {
+    margin-bottom: 40px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: $mobileLarge) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.NumberOrder {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.List {
+  padding: 0;
+  margin: 0 0 60px;
+  list-style: none;
+}
+
+.Item {
+  margin-bottom: 32px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $mobileLarge) {
+    background: #ffffff;
+    box-shadow:
+      0px 0px 0.5px rgba(66, 71, 76, 0.32),
+      0px 4px 8px rgba(66, 71, 76, 0.05),
+      0px 4px 40px #eeeeee;
+    border-radius: 8px;
+  }
+}
+
+.Info {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.InfoItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 8px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 16px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.InfoTitle {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.InfoValue,
+.InfoTitle {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $black;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+  }
+}
+
+.InfoValue {
+  font-weight: 800;
+
+  @media (max-width: $tablet) {
+    font-weight: 600;
+  }
+}
+
+.Red {
+  color: $red;
+}
+
+.Green {
+  color: $green;
+}
+
+.Row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  @media (min-width: $mobileLarge) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: $mobileLarge) {
+    flex-direction: column;
+    padding: 12px;
+  }
+}
+
+.Row1 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.HeaderTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.Status {
+  color: #3aa981;
+  font-weight: 700;
+  font-size: 17px;
+  margin: 0;
+}
+
+.Success {
+  color: $green;
+}
+
+.Delivery {
+  color: #526ed3;
+}
+
+.Canceled {
+  color: $red;
+}
+
+.NewOrder {
+  color: #526ed3;
+}
+
+.Product {
+  margin-bottom: 24px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.Item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Category {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  height: 100%;
+  @media (min-width: $mobileLarge) {
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+
+  p,
+  h5 {
+    margin: 0;
+    font-size: 15px;
+  }
+
+  h5 {
+    margin-top: 4px;
+    font-size: 17px;
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+}
+
+.Origin {
+  color: #44444466;
+}
+
+.Stock {
+  color: #e48036;
+}
+
+.PriceBox {
+  align-self: flex-end;
+
+  h5 {
+    margin: 0;
+    margin-top: 4px;
+    font-size: 17px;
+    white-space: nowrap;
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+}
+
+.Quantity {
+  align-self: flex-start;
+  justify-self: flex-end;
+}
+
+.Close {
+  display: block;
+  border: none;
+  margin: 36px auto 0;
+  font-size: 15px;
+  font-weight: 800;
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    color: $gray;
+  }
+
+  &:active {
+    color: $black;
+  }
+}

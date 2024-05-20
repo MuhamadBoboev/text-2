@@ -1,0 +1,38 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+//colors
+$new: #3aa981;
+$promotion: #cc3333;
+$hit: #7b439e;
+
+.Tag {
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 4px 8px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+.Red {
+  background: #e7716a;
+}
+
+.Green {
+  background: $green;
+}
+
+.Hit {
+  background: $hit;
+}
+
+.New {
+  background: $new;
+}
+
+.Promotion {
+  background: $promotion;
+}

@@ -1,0 +1,84 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Section {
+  margin: 40px 0;
+
+  .TabHeader {
+    margin-bottom: 50px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: $mobileLarge) {
+      width: 100%;
+    }
+  }
+
+  .TabButton {
+    white-space: nowrap;
+  }
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .Title {
+    margin: 0 0 40px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: $mobileLarge) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.Divider {
+  margin-bottom: 60px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Button {
+  margin: 0 0 40px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    // display: none;
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 700;
+    background-color: transparent;
+    color: $black !important;
+    width: max-content;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
+    min-width: auto;
+    margin-bottom: 24px;
+  }
+}

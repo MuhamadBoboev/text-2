@@ -1,0 +1,210 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Slider {
+  height: 720px;
+  //height: 900px;
+  position: relative;
+  //max-width: 1920px;
+  max-height: 1024px;
+  //min-height: 500px;
+
+  //@media (min-height: 700px) and (max-height: 799px) {
+  //  height: 520px;
+  //}
+  //
+  //@media (min-height: 800px) and (max-height: 960px) {
+  //  height: 580px;
+  //}
+  //
+  //@media (max-height: 700px) {
+  //  height: 520px;
+  //}
+
+  @media (max-width: $desktop) {
+    height: 420px;
+  }
+
+  @media (max-width: $tabletSmall - 1px) {
+    height: 500px;
+  }
+}
+
+.Slide {
+  height: 720px;
+  //position: relative;
+
+  @media (max-width: $desktop) {
+    height: 460px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    height: 260px;
+  }
+}
+
+.InfoWrapper {
+  padding: 0 80px;
+
+  @media (max-width: $tabletSmall) {
+    padding: 0 16px;
+  }
+}
+
+.Navigation {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  visibility: hidden;
+
+  @media (max-width: $tabletSmall) {
+    display: none;
+  }
+}
+
+.Arrow {
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  visibility: visible;
+
+  opacity: 0.65;
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    stroke: #fff;
+  }
+}
+
+.Img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: $grayLight;
+  }
+}
+
+.Info {
+  position: absolute;
+  bottom: 120px;
+  z-index: 1;
+
+  @media (min-height: 700px) and (max-height: 960px) {
+    bottom: 76px;
+  }
+
+  @media (max-width: $desktop) {
+    bottom: 76px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    bottom: 55px;
+  }
+}
+
+.Title {
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 56px;
+  color: #fff;
+  max-width: 500px;
+  margin: 0 0 40px;
+
+  @media (max-width: $desktop) {
+    font-size: 36px;
+    line-height: 40px;
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    font-size: 24px;
+    line-height: 28px;
+    max-width: 225px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    border-radius: 8px;
+    padding: 9px 13px;
+    margin: 0;
+  }
+
+  &.Black {
+    color: $black;
+  }
+}
+
+.Link {
+  border-radius: 8px;
+  border: 1px solid #fff;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  min-width: 208px;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  &.Black {
+    color: $black;
+    border-color: $black;
+  }
+
+  @media (max-width: $desktop) {
+    height: 36px;
+    min-width: 133px;
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Pagination {
+  position: absolute;
+  z-index: 1;
+  bottom: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.Bullet {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 2px;
+  display: block;
+}
+
+.BulletActive {
+  background: $secondary;
+}

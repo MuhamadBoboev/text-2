@@ -1,0 +1,70 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Title {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 0 8px;
+}
+
+.List {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Item {
+  margin-right: 16px;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.Label {
+  //padding: 12px 24px;
+  cursor: pointer;
+
+  .Radio:checked {
+    & ~ .Name {
+      color: #fff;
+      background: $primary;
+      border-color: $primary;
+    }
+  }
+
+  .Radio:disabled {
+    & ~ .Name {
+      background: none;
+      border-color: lighten($primary, 70%);
+      color: lighten($primary, 70%);
+      cursor: not-allowed;
+    }
+  }
+}
+
+.Name {
+  padding: 12px 24px;
+  display: inline-flex;
+  border-radius: 8px;
+  border: 1px solid $grayLight;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  transition: 250ms;
+
+  @media (max-width: $mobileLarge) {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.Radio {
+  @include visually-hidden;
+}

@@ -1,0 +1,74 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Carousel {
+  padding-bottom: 72px;
+  position: relative;
+  margin: 0 -23px;
+
+  .Pagination {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    height: 8px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.Slider {
+  padding: 30px 30px !important;
+  margin: -30px 0 !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.Item {
+  height: initial !important;
+}
+
+.Bullet {
+  border-radius: 50%;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: $black;
+  margin: 0 4px;
+}
+
+.BulletActive {
+  background: $secondary;
+}
+
+.Navigation {
+  position: absolute;
+  bottom: 0;
+  right: 16px;
+}
+
+.Next,
+.Prev {
+  fill: none;
+  stroke: $black;
+  background: none;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+
+  &:hover {
+    stroke: $primary;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.Prev {
+  margin-right: 32px;
+}

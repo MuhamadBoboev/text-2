@@ -1,0 +1,120 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+
+  @media (max-width: $mobileLarge) {
+    z-index: 7;
+  }
+}
+
+.Backdrop {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.Content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  max-width: 680px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 104px 80px 60px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: overlay;
+
+  @media (min-width: $desktop) {
+    &::-webkit-scrollbar {
+      width: 15px;
+      opacity: 0;
+      background-color: transparent;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    max-width: 620px;
+    padding: 56px 60px 40px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 440px;
+    padding: 84px 40px 100px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    max-width: none;
+    padding: 100px 16px 60px;
+    overflow-y: auto;
+  }
+
+  .Close {
+    position: absolute;
+    top: 60px;
+    right: 80px;
+
+    &::after,
+    &::before {
+      background: #14181f;
+    }
+
+    @media (max-width: $desktop) {
+      top: 40px;
+      right: 60px;
+    }
+
+    @media (max-width: $tablet) {
+      right: 46px;
+      top: 46px;
+    }
+
+    @media (max-width: $mobileLarge) {
+      display: none;
+    }
+  }
+
+  &.Rtl {
+    right: auto;
+    left: 0;
+  }
+}
+
+.Entering {
+  animation: fadeIn 500ms forwards;
+}
+
+.Exiting {
+  animation: fadeOut 250ms forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

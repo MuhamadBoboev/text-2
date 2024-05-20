@@ -1,0 +1,121 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Group {
+  margin: 0 0 40px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 28px;
+  }
+}
+
+.Label {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: $gray;
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.066px;
+  }
+}
+
+.LabelHidden {
+  @include visually-hidden;
+}
+
+.InputWrap {
+  position: relative;
+}
+
+.Line {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1.8px;
+  background: darken($primary, 15%);
+  bottom: 0;
+  transform: scaleX(0);
+  transition-duration: 350ms;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+}
+
+.Input {
+  border: none;
+  background: none;
+  border-bottom: 1px solid $grayLight;
+  width: 100%;
+  padding: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 28px;
+  box-sizing: border-box;
+  color: $black;
+  transition-property: border;
+  transition-duration: 200ms;
+  border-radius: 0;
+
+  @media (max-width: $desktop) {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: -0.32px;
+  }
+
+  &:hover {
+    border-bottom-color: $primary;
+  }
+
+  &::placeholder {
+    color: $grayLight;
+  }
+
+  &:focus {
+    //border-bottom-color: darken($primary, 5%);
+    outline: none;
+  }
+
+  &:focus + span,
+  &:active + span {
+    transform: scaleX(1);
+  }
+
+  &.ErrorInput {
+    border-bottom-color: $red;
+  }
+
+  &:disabled {
+    color: $gray2;
+    cursor: not-allowed;
+  }
+}
+
+.Error {
+  font-size: 11px;
+  line-height: 1;
+  margin-top: 9px;
+  color: $red;
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    margin-right: 6px;
+  }
+}

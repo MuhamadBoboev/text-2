@@ -1,0 +1,35 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.List {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 335px) {
+    margin-bottom: 24px;
+  }
+}
+
+.Item {
+  margin-right: 24px;
+
+  @media (max-width: $mobileLarge) {
+    margin-right: 18px;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.Img {
+  @media (max-width: $mobileLarge) {
+    max-width: 50px;
+    max-height: 20px;
+    width: auto;
+    height: auto;
+  }
+}

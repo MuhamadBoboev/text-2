@@ -1,0 +1,11 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Footer {
+  flex-shrink: 0;
+  margin-top: auto;
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 80px;
+  }
+}

@@ -1,0 +1,102 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.ModalHeader {
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Auth {
+  display: none;
+
+  .AuthDivider {
+    background: $gray;
+    margin: 40px 0;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: block;
+  }
+
+  .SignUpText {
+    display: block;
+    font-weight: 600;
+  }
+
+  .SignUp,
+  .SignIn {
+    margin-bottom: 20px;
+    padding: 14px;
+  }
+}
+
+.AuthTitle {
+  margin: 0 0 20px;
+  font-family: 'SF Pro Text', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+}
+
+.List {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.Item {
+  margin-bottom: 40px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 28px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.Link {
+  text-decoration: none;
+  background: none;
+  border: none;
+  display: inline-block;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 28px;
+  color: $black;
+  cursor: pointer;
+  transition-duration: 200ms;
+  transition-property: color;
+  text-align: left;
+
+  @media (max-width: $desktop) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0.38px;
+  }
+
+  &:hover {
+    color: $gray;
+  }
+}
+
+.CloseButton {
+  margin-top: 40px;
+}
+
+.Footer {
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}

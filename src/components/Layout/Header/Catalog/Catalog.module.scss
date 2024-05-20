@@ -1,0 +1,60 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Menu {
+  background: #fff;
+  padding: 68px 0 156px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  top: 130px;
+  left: 0;
+  right: 0;
+  min-height: calc(100vh);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  width: 100%;
+
+  @media (max-width: $desktop) {
+    padding: 40px 0 76px;
+    top: 116px;
+    min-height: calc(100vh - 170px);
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.Wrapper {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.Tab {
+  width: 100%;
+}
+
+.Close {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  background: none;
+  padding: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    svg {
+      stroke: $gray;
+    }
+  }
+
+  svg {
+    stroke: $black;
+  }
+}

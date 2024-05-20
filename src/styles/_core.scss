@@ -1,0 +1,59 @@
+@import 'mixins';
+@import 'variables';
+
+html {
+  min-height: 100%;
+  //width: 100vw;
+  //overflow: overlay;
+  //overflow-x: hidden;
+}
+
+@media (min-width: $desktop) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+    opacity: 0;
+    background-color: transparent;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(38, 38, 38, 0.5);
+    border-radius: 3px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  position: relative;
+  min-width: 320px;
+
+  width: 100vw;
+  overflow: overlay;
+  overflow-x: hidden;
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+  }
+
+  > svg {
+    display: none;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}

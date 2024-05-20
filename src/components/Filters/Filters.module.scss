@@ -1,0 +1,36 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Filters {
+  .Title {
+    margin: 0 16px 0 0;
+  }
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.Clear {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray;
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.ProductTotalCount {
+  margin-bottom: 32px;
+}

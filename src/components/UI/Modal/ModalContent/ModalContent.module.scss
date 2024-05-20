@@ -1,0 +1,25 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Content {
+  flex-shrink: 1;
+  //overflow-y: auto;
+  flex-grow: 1;
+  position: relative;
+
+  @media (max-width: $desktop) {
+    padding: 20px 60px 40px;
+    margin: 0 -60px;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 20px 40px 40px;
+    margin: 0 -40px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    padding: 20px 16px 50px;
+    margin: 0 -16px;
+    overflow: visible;
+  }
+}

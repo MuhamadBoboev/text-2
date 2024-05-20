@@ -1,0 +1,46 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $tablet) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 520px) {
+    display: none;
+  }
+
+  @media (max-width: 335px) {
+    justify-content: center;
+  }
+}
+
+.Left {
+  margin-right: 30px;
+
+  @media (max-width: $mobileLarge) {
+    margin: 0 auto;
+  }
+
+  //@media (max-width: 375px) {
+  //  margin-right: 10px;
+  //}
+}
+
+.Divider {
+  flex-grow: 1;
+  height: 1px;
+  background: $grayLight;
+  margin: 0 40px;
+}
+
+.Copyright {
+  color: $grayLight;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 17px;
+}

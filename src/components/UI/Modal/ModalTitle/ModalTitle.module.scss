@@ -1,0 +1,14 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Title {
+  margin: 0 0 40px;
+
+  @media (max-width: $desktop) {
+    margin: 0 0 28px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 24px;
+  }
+}

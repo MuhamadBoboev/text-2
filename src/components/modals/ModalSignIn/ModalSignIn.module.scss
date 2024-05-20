@@ -1,0 +1,258 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Modal {
+  .Title {
+    margin: 0 0 35px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .InputGroup {
+    //margin: 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .InputConfirmGroup {
+    margin-bottom: 0;
+    margin-left: 48px;
+    flex-grow: 1;
+
+    @media (max-width: $desktop) {
+      margin-left: 40px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-left: 30px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-left: 20px;
+    }
+  }
+
+  .InputConfirm {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    -moz-appearance: textfield;
+  }
+
+  .ConfirmButton {
+    font-weight: 500;
+    color: $gray;
+    min-width: 120px;
+    display: block;
+
+    &:active {
+      background: $primary;
+      color: #fff !important;
+    }
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+    }
+
+    &:disabled {
+      color: $gray;
+      border-color: $gray;
+      opacity: 0.3;
+    }
+
+    @media (max-width: $desktop) {
+      padding: 9px 26px;
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    @media (max-width: $tablet) {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 12px 24px;
+      white-space: nowrap;
+      color: $black;
+    }
+  }
+
+  .SendButton {
+    margin-top: 80px;
+
+    @media (max-width: $desktop) {
+      margin-top: 50px;
+      padding: 10px 0;
+    }
+
+    @media (max-width: $tablet) {
+      padding: 10px 0;
+      font-family: 'SF Pro Text', sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 22px;
+      margin-top: 40px;
+    }
+  }
+
+  .Header {
+    margin-bottom: 40px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .Divider {
+    margin-bottom: 0;
+  }
+}
+
+.Spinner {
+  display: flex;
+  justify-content: center;
+}
+
+.ConfirmButtonWrap {
+  width: fit-content;
+  position: relative;
+}
+
+.RepeatConfirm {
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  margin-top: 12px;
+  display: block;
+  @include miniText();
+}
+
+.Form {
+  margin-top: 100px;
+
+  @media (max-width: $desktop) {
+    margin-top: 80px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-top: 60px;
+  }
+}
+
+.SelectWrapper {
+  position: relative;
+  margin-bottom: 40px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    background: url('/assets/icons/arrow-down.svg') no-repeat center;
+    background-size: 14px 7px;
+    pointer-events: none;
+  }
+}
+
+.Select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $grayLight;
+  padding: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 28px;
+  box-sizing: border-box;
+  color: $black;
+  transition-property: border;
+  transition-duration: 200ms;
+  position: relative;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+
+  &:hover {
+    border-bottom-color: $primary;
+  }
+}
+
+.ConfirmPhone {
+  display: flex;
+  align-items: flex-start;
+}
+
+.SignIn {
+  text-align: center;
+  color: $gray;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+.ButtonMethod {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  background: none;
+  padding: 0;
+  border: none;
+  width: fit-content;
+  display: block;
+  margin: 28px auto 20px;
+  border-bottom: 1px solid $grayLight;
+  color: $black;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+  }
+}

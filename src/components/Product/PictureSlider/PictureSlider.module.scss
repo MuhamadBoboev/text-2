@@ -1,0 +1,166 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+}
+
+.Close {
+  position: absolute;
+  top: 48px;
+  right: 48px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+  svg {
+    fill: #fff;
+  }
+}
+
+.Content {
+  width: 100%;
+  //height: calc(100% - 100px);
+  height: calc(90%);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+}
+
+.Slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Img {
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+
+  @media (max-height: 700px) {
+    max-height: 400px;
+  }
+
+  @media (max-height: 500px) {
+    max-height: 350px;
+  }
+
+  @media (max-height: 434px) {
+    max-height: 300px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 400px;
+  }
+
+  @media (max-width: $tabletSmall) {
+    max-width: 350px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    max-width: 280px;
+  }
+}
+
+.Navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 48px;
+  right: 48px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+
+  @media (max-width: $desktop) {
+    left: 24px;
+    right: 24px;
+  }
+
+  @media (max-width: $tabletSmall) {
+    left: 16px;
+    right: 16px;
+  }
+}
+
+.Prev,
+.Next {
+  background: none;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+
+  svg {
+    stroke: #fff;
+    @media (max-width: $desktop) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.Pagination {
+  position: absolute;
+  bottom: 15% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+
+  @media (max-height: 900px) {
+    bottom: 10% !important;
+  }
+
+  @media (max-height: 670px) {
+    bottom: 6% !important;
+  }
+
+  @media (max-width: $desktop) {
+    bottom: 10% !important;
+  }
+}
+
+.Bullet {
+  width: 12px;
+  height: 12px;
+  display: block;
+  margin: 0 4px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+
+  @media (max-width: $tabletSmall) {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+  }
+}
+
+.BulletActive {
+  background: $black;
+}

@@ -1,0 +1,36 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  color: $black;
+  margin: 60px 0;
+
+  &.Lite {
+    font-weight: 700;
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 28px;
+    line-height: 32px;
+    color: $grayHead;
+    margin: 28px 0;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 0.35px;
+    margin: 24px 0;
+  }
+
+  @media (max-width: $mobileLarge) {
+    color: $black;
+    margin: 20px 0;
+  }
+}

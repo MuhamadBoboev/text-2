@@ -1,0 +1,19 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Divider {
+  width: 100%;
+  box-sizing: border-box;
+  height: 1px;
+  background: $secondary;
+  margin-bottom: 60px;
+  flex-shrink: 0;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 36px;
+  }
+}

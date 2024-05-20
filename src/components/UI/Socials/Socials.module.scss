@@ -1,0 +1,90 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.List {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  @media (max-width: 335px) {
+    margin-bottom: 24px;
+  }
+}
+
+.Item {
+  margin: 0 10px 0 0;
+
+  @media (max-width: $tablet) {
+    margin-right: 12px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-right: 20px;
+  }
+
+  a {
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    @media (max-width: $tablet) {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: $mobileLarge) {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (max-width: 375px) {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      svg {
+        //stroke: darken($primary, 15%)
+        transform: scale(1.05);
+      }
+    }
+
+    &:active {
+      svg {
+        //stroke: darken($primary, 15%)
+        transform: scale(0.9);
+      }
+    }
+
+    svg {
+      stroke: $black;
+      fill: none;
+      transition-property: transform;
+      transition-duration: 200ms;
+
+      @media (max-width: $tablet) {
+        width: 24px;
+        height: 24px;
+      }
+
+      @media (max-width: $mobileLarge) {
+        width: 28px;
+        height: 28px;
+      }
+
+      @media (max-width: 375px) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.BigIcon {
+  margin-right: 24px;
+}

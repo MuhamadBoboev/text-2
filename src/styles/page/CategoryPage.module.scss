@@ -1,0 +1,240 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Wrapper {
+  margin: 120px auto;
+  display: flex;
+  max-width: $wrapper + 100px;
+
+  @media (max-width: $desktop) {
+    margin: 80px auto 100px;
+    max-width: 876px;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 60px auto 84px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin: 40px auto;
+  }
+}
+
+.Filters {
+  flex-basis: 26.1%;
+  margin-right: 6.62%;
+
+  @media (max-width: $desktop) {
+    position: fixed;
+    background: #fff;
+    z-index: 12;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 104px 80px;
+    flex-basis: auto;
+    margin-right: 0;
+    max-width: 492px;
+    width: 100%;
+    box-sizing: border-box;
+    transform: translate3d(-100%, 0, 0);
+    transition: 250ms;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 104px 40px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    padding: 90px 16px;
+  }
+}
+
+.Close {
+  background: none;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 40px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+
+  svg {
+    stroke: $primary;
+  }
+}
+
+.OpenFilters {
+  @media (max-width: $desktop) {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.Backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 11;
+}
+
+.Right {
+  flex-basis: 67.54%;
+  flex-grow: 1;
+}
+
+.Breadcrumbs {
+  margin-bottom: 24px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+  justify-content: space-between;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 20px;
+  }
+}
+
+.Title {
+  margin: 0 24px 0 0;
+}
+
+.FilterButton {
+  display: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 20px;
+  align-items: center;
+  padding: 6px 12px;
+  margin: 0 28px 0 auto;
+
+  @media (max-width: $desktop) {
+    display: flex;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+
+  svg {
+    fill: #fff;
+    stroke: #fff;
+    margin-right: 8px;
+  }
+}
+
+.Button {
+  align-items: center;
+  display: flex;
+  line-height: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-left: auto;
+
+  svg {
+    stroke: #fff;
+    margin-right: 8px;
+  }
+}
+
+.FilterButtonMobile {
+  background: #fff;
+  border: none;
+  padding: 0;
+  line-height: 0;
+  position: fixed;
+  top: 16px;
+  z-index: 99;
+  right: 16px;
+  display: none;
+
+  @media (max-width: $mobileLarge) {
+    display: block;
+  }
+
+  svg {
+    stroke: $black;
+  }
+}
+
+.SelectWrapper {
+  position: relative;
+  flex-basis: 240px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    background: url('/assets/icons/arrow-down.svg') no-repeat center;
+    background-size: 14px 7px;
+    pointer-events: none;
+  }
+}
+
+.Select {
+  width: 100%;
+  border: 1px solid $grayLight;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition-property: border;
+  transition-duration: 200ms;
+  position: relative;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  max-width: 240px;
+  height: 44px;
+  font-size: 13px;
+  line-height: 1;
+  color: rgba(27, 31, 59, 0.65);
+
+  &:hover {
+    border-bottom-color: $primary;
+  }
+}
+
+.Pagination {
+  margin-top: 80px;
+  justify-content: center;
+}

@@ -1,0 +1,28 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Dots {
+  width: 13.4px;
+  height: 13.4px;
+  background: $black;
+  color: $black;
+  border-radius: 50%;
+  box-shadow:
+    13.4px 0,
+    -26.9px 0;
+  animation: dots-h5boszmd 0.5s infinite linear alternate;
+}
+
+@keyframes dots-h5boszmd {
+  50% {
+    box-shadow:
+      13.4px 0,
+      -13.4px 0;
+  }
+
+  100% {
+    box-shadow:
+      26.9px 0,
+      -13.4px 0;
+  }
+}

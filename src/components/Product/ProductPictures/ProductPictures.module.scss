@@ -1,0 +1,129 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Images {
+  flex-basis: 44.2%;
+  //max-width: 100%;
+  flex-grow: 1;
+
+  @media (max-width: $desktop) {
+    flex-basis: 39%;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: $tablet) {
+    display: flex;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 28px;
+    display: none;
+  }
+}
+
+.MainImg {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 488px;
+  position: relative;
+
+  @media (max-width: $desktop) {
+    height: 328px;
+  }
+
+  @media (max-width: $tablet) {
+    flex-basis: 66.44%;
+    height: 404px;
+    //margin-right: 12px;
+    flex-grow: 1;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (max-width: $mobileLarge) {
+    height: 358px;
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.Favorite {
+  background: none;
+  border: none;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  cursor: pointer;
+
+  svg {
+    fill: $gray;
+    stroke: $gray;
+  }
+}
+
+.ActiveFavorite {
+  svg {
+    fill: $red;
+    stroke: $red;
+  }
+}
+
+.List {
+  list-style: none;
+  padding: 20px 0 0 0;
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(2, 48%);
+  grid-auto-rows: 244px;
+  grid-row-gap: 20px;
+  grid-column-gap: 4%;
+  border-top: 1px solid $primary;
+  justify-content: space-between;
+
+  @media (max-width: $desktop) {
+    grid-auto-rows: 156px;
+  }
+
+  @media (max-width: $tablet) {
+    border-top: none;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    height: 404px;
+    padding-top: 0;
+    grid-row-gap: 12px;
+    margin: 0 0 0 12px;
+    //height: 100%;
+    //overflow: auto;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Item {
+  overflow: hidden;
+  border-radius: 8px;
+  //margin: 20px;
+
+  @media (max-width: $tablet) {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  &:nth-of-type(n + 4) {
+    display: none;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

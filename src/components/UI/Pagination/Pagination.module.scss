@@ -1,0 +1,78 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+.Page {
+  margin-right: 4px;
+
+  a {
+    min-width: 32px;
+    border-radius: 4px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 20px;
+    color: $secondary;
+  }
+}
+
+.ActivePage {
+  a {
+    color: #fff;
+    background: $black;
+    cursor: not-allowed;
+  }
+}
+
+li.Prev {
+  margin-right: 4px;
+}
+
+li.Next,
+li.Prev {
+  a {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  svg {
+    fill: $secondary;
+  }
+}
+
+.Disabled {
+  cursor: not-allowed;
+}
+
+.Break {
+  margin-right: 4px;
+
+  a {
+    color: $secondary;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 20px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

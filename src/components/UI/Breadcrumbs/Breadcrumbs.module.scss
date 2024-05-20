@@ -1,0 +1,64 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.List {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Item {
+  margin-right: 8px;
+
+  &:first-of-type {
+    .Link {
+      padding-left: 0;
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.Link {
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: $gray2;
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0 0 12px;
+  position: relative;
+
+  @media (max-width: $desktop) {
+    @include miniText;
+  }
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: $gray2;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.Active {
+  color: $black;
+
+  &::before {
+    background: $black;
+  }
+}

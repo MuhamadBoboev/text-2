@@ -1,0 +1,77 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Accordion {
+  border-bottom: 1px solid $secondary;
+}
+
+.Title {
+  padding: 16px 0;
+  width: 100%;
+  text-align: left;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 28px;
+  color: $black;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.Button {
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $black;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+}
+
+.Open {
+  flex-grow: 1;
+}
+
+.Icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: relative;
+  margin-left: auto;
+
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 2px;
+    background: $primary;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    transition: 250ms;
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+.OpenIcon {
+  &::after {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.Content {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray;
+  overflow: hidden;
+}

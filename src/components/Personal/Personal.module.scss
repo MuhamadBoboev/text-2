@@ -1,0 +1,73 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Section {
+  margin: 120px 0;
+
+  @media (max-width: $desktop) {
+    margin: 80px 0;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 60px 0;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin: 40px 0 70px;
+  }
+
+  .Title {
+    margin: 20px 0 40px;
+
+    @media (max-width: $desktop) {
+      margin: 20px 0 28px;
+    }
+
+    @media (max-width: $tablet) {
+      margin: 16px 0 24px;
+    }
+  }
+}
+
+.Header {
+  margin-bottom: 60px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    @include visually-hidden;
+  }
+}
+
+.TopWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.LogOut {
+  background: none;
+  border: none;
+  align-self: center;
+  cursor: pointer;
+  color: $black;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  margin-left: auto;
+  line-height: 24px;
+
+  &:hover {
+    color: $gray2;
+  }
+}
+
+.UpdateProfile {
+  margin-left: 38px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

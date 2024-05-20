@@ -1,0 +1,289 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Product {
+  display: flex;
+  border-radius: 8px;
+  padding: 16px;
+  overflow: hidden;
+  position: relative;
+  transition-duration: 250ms;
+  transition-property: background, box-shadow;
+
+  @media (max-width: $tablet) {
+    box-shadow:
+      0px 0px 0.5px rgba(66, 71, 76, 0.32),
+      0px 4px 8px rgba(66, 71, 76, 0.05),
+      0px 4px 40px #eeeeee;
+    padding: 16px 18px;
+    .Close {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: $mobileLarge) {
+    padding: 16px;
+  }
+
+  &:hover {
+    background: #fff;
+    box-shadow:
+      0 0 0.5px rgba(66, 71, 76, 0.32),
+      0 4px 8px rgba(66, 71, 76, 0.05),
+      0 4px 40px #eee;
+
+    .Close {
+      opacity: 1;
+    }
+  }
+}
+
+.Tags {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  max-width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: $mobileLarge) {
+    top: 10px;
+    left: 10px;
+
+    > span {
+      border-radius: 6px;
+    }
+  }
+}
+
+.Close {
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+
+  svg {
+    fill: $black;
+    stroke: $black;
+  }
+
+  @media (max-width: $tablet) {
+    right: 10px;
+    top: 8px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    right: 8px;
+    top: 8px;
+  }
+}
+
+.Left {
+  margin-right: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-basis: 120px;
+}
+
+.Img {
+  display: block;
+  object-fit: contain;
+
+  @media (max-width: $tablet) {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+.Right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.Category {
+  margin: 0 0 4px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 290px;
+
+  @media (max-width: $tablet) {
+    max-width: 150px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    max-width: none;
+    width: 85%;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.066px;
+    color: $gray3;
+  }
+}
+
+.Name {
+  color: $black;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 28px;
+  margin: 0 0 8px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 85%;
+
+  @media (max-width: $mobileLarge) {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+  }
+}
+
+.Attributes {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  margin-right: 20px;
+}
+
+.Attribute {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray2;
+  margin: 0 10px 0 0;
+}
+
+.CounterAndPrice {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: auto;
+
+  @media (max-width: $tablet) {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+.CounterWrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  @media (max-width: $tablet) {
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+
+  .IncrementCounter,
+  .DecrementCounter {
+    width: 24px;
+    height: 24px;
+    background: none;
+    color: $black;
+    padding: 0;
+
+    @media (max-width: $tablet) {
+      width: 16px;
+      height: 16px;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .InputCounter {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    pointer-events: none;
+    margin: 0 4px;
+  }
+}
+
+.CounterTitle {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray2;
+  margin: 0 8px 0 0;
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.066px;
+    color: $gray3;
+  }
+
+  @media (max-width: $mobileLarge) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+.Prices {
+  text-align: right;
+  position: relative;
+
+  @media (max-width: $tablet) {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+}
+
+.Price {
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 28px;
+  color: $secondary;
+  margin: 0 0 0 15px;
+  white-space: nowrap;
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.Strike {
+  color: $gray3;
+  text-decoration: line-through;
+  position: absolute;
+  top: -28px;
+  right: 0;
+
+  @media (max-width: $tablet) {
+    position: static;
+    top: auto;
+    left: auto;
+  }
+}

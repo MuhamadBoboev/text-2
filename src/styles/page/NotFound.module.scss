@@ -1,0 +1,56 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.NotFound {
+  position: fixed;
+  background: #fff;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.Title {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.Link {
+  text-decoration: none;
+  color: $gray;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.Logo {
+  margin-bottom: 40px;
+}
+
+.Title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 55px;
+  color: $black;
+}
+
+.Code {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 160px;
+  line-height: 219px;
+  display: block;
+  color: $red;
+}
+
+.Button {
+  margin-top: 60px;
+}

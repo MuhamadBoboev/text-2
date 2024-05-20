@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Button {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 60px;
+  right: 130px;
+  z-index: 99;
+
+  svg {
+    stroke: $black;
+  }
+
+  &:hover {
+    svg {
+      stroke: $gray2;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    top: 40px;
+    right: 110px;
+  }
+
+  @media (max-width: $tablet) {
+    right: 95px;
+    top: 46px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}

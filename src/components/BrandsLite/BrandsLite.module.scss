@@ -1,0 +1,147 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Section {
+  margin: 68px 0 120px;
+
+  @media (max-width: $desktop) {
+    margin: 84px 0 100px;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 84px 0 40px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin: 24px 0 28px;
+  }
+
+  .Button {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    font-weight: 600;
+    @include miniText();
+
+    @media (max-width: $tablet) {
+      background: none;
+      color: $black !important;
+    }
+
+    @media (max-width: $mobileLarge) {
+      //margin: 0 auto;
+      margin-left: auto;
+      font-size: 13px;
+      font-weight: 700;
+    }
+  }
+
+  .ButtonMobile {
+    margin-left: auto;
+    width: fit-content;
+    display: block;
+
+    &:hover {
+      color: $gray;
+    }
+
+    &:active {
+      color: $black;
+    }
+
+    @media (min-width: $mobileLarge + 1px) {
+      display: none;
+    }
+  }
+
+  .Title {
+    margin: 0 24px 0 0;
+
+    @media (min-width: $tablet + 1px) or (max-width: $mobileLarge) {
+      @include visually-hidden;
+    }
+  }
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 0;
+  }
+}
+
+.Slider {
+  :global(.swiper-wrapper) {
+    align-items: center !important;
+    //max-height: 60px;
+  }
+}
+
+.List {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.Item {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+
+  @media (max-width: $desktop - 1px) {
+    min-height: 96px;
+  }
+
+  @media (max-width: $tablet) {
+    min-height: 80px;
+  }
+
+  @media (max-width: 400px) {
+    min-height: 60px;
+  }
+
+  @media (min-width: $desktop) {
+    min-height: 96px;
+  }
+}
+
+.Img {
+  max-height: 60px;
+  height: auto;
+  display: block;
+  margin: auto;
+  width: auto;
+
+  @media (max-width: $desktop - 1px) {
+    max-width: 96px;
+    max-height: 96px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 90px;
+    max-height: 80px;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: 96px;
+    max-height: 96px;
+  }
+
+  @media (max-width: 400px) {
+    max-height: 60px;
+    max-width: 60px;
+  }
+}

@@ -1,0 +1,160 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Section {
+  margin: 120px 0;
+
+  @media (max-width: $desktop) {
+    margin: 100px 0;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 84px 0 80px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin: 40px 0;
+  }
+
+  .TabHeader {
+    margin-bottom: 50px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    overflow-x: auto;
+
+    @media (max-width: $tabletSmall) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: $mobileLarge) {
+      width: 100%;
+    }
+  }
+
+  .TabButton {
+    white-space: nowrap;
+  }
+}
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .Title {
+    margin: 0 0 40px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: $mobileLarge) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.List {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 19%);
+  justify-content: space-between;
+  grid-row-gap: 48px;
+
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(4, 24%);
+  }
+
+  @media (max-width: $desktop - 1px) {
+    grid-template-columns: repeat(3, 31%);
+    grid-row-gap: 28px;
+    grid-column-gap: 3.28%;
+  }
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+    grid-row-gap: 26px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    grid-template-columns: repeat(2, minmax(130px, 192px));
+    grid-column-gap: 4%;
+    grid-row-gap: 18px;
+  }
+}
+
+.Banner {
+  //display: none;
+  grid-column: span 2;
+  grid-row: span 2;
+
+  @media (max-width: $desktop - 1px) {
+    display: none;
+  }
+}
+
+.Img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: $grayLight;
+  }
+}
+
+.Info {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+}
+
+.BannerTitle {
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.Link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 8px;
+  padding: 2px 11px;
+}
+
+.Loader {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Empty {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

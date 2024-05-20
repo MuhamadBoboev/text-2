@@ -1,0 +1,75 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.SelectWrapper {
+  position: relative;
+  margin-bottom: 40px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 28px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    background: url('/assets/icons/arrow-down.svg') no-repeat center;
+    background-size: 14px 7px;
+    pointer-events: none;
+  }
+}
+
+.Select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $grayLight;
+  padding: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 28px;
+  box-sizing: border-box;
+  color: $black;
+  transition-property: border;
+  transition-duration: 200ms;
+  position: relative;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  background: none;
+
+  .Placeholder {
+    display: none;
+  }
+
+  &:hover {
+    border-bottom-color: $primary;
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.Error {
+  font-size: 11px;
+  line-height: 1;
+  margin-top: 9px;
+  color: $red;
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    margin-right: 6px;
+  }
+}

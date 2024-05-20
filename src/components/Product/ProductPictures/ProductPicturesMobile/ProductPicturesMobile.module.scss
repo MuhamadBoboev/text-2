@@ -1,0 +1,40 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Images {
+  width: 100%;
+  margin-bottom: 28px;
+
+  @media (min-width: $mobileLarge + 1px) {
+    display: none;
+  }
+
+  .Slide {
+    height: auto !important;
+  }
+}
+
+.Pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Bullet {
+  background: $primary;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 2px;
+}
+
+.BulletActive {
+  background: $secondary;
+}
+
+.Img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

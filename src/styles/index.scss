@@ -1,0 +1,30 @@
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'core';
+@import 'fonts';
+
+#__next {
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $tablet) {
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    padding-bottom: 60px;
+  }
+}
+
+.page-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.5);
+}

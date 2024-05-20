@@ -1,0 +1,149 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.ModalHeader {
+  .ModalTitle {
+    margin: 0 0 35px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .Header {
+    margin-bottom: 40px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .Divider {
+    margin-bottom: 0;
+  }
+
+  .Breadcrumbs {
+    margin-bottom: 20px;
+
+    @media (max-width: $mobileLarge) {
+      display: none;
+    }
+  }
+}
+
+.Content {
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  //top: 50%;
+  //transform: translateY(calc(-50% - 70px));
+  display: flex;
+  height: 100%;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.Center {
+  height: auto;
+  width: 100%;
+}
+
+.Info {
+  transform: translateY(-30%);
+}
+
+.Spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Icon {
+  fill: $green;
+  display: block;
+  margin: 0 auto;
+
+  @media (max-width: $mobileLarge) {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 35px;
+  }
+}
+
+.SuccessIcon {
+  stroke: $green;
+}
+
+.ErrorIcon {
+  stroke: $red;
+}
+
+.NotPaidIcon {
+  fill: none;
+  stroke: #ff8a00;
+}
+
+.Title {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+
+  @media (max-width: $mobileLarge) {
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+}
+
+.Subtitle {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: center;
+
+  @media (max-width: $mobileLarge) {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: -0.408px;
+  }
+}
+
+.Code {
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.Buttons {
+  //bottom: 80px;
+}
+
+.SendButton {
+  margin-bottom: 20px;
+
+  @media (max-width: $mobileLarge) {
+    padding: 14px 0;
+  }
+}
+
+.CheckPayment {
+  text-align: center;
+  display: block;
+  margin: 30px auto 0;
+  background: none;
+  border: none;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.Footer {
+  margin-top: 40px;
+}

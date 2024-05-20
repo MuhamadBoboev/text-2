@@ -1,0 +1,62 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.List {
+  margin: 0 96px 0 0;
+  padding: 0 73px 0 0;
+  border-right: 1px solid $primary;
+  list-style: none;
+  min-width: 320px;
+  height: 100%;
+
+  @media (max-width: $desktop) {
+    min-width: 216px;
+    margin-right: 40px;
+  }
+}
+
+.Item {
+  margin-bottom: 40px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 28px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.Button {
+  margin: 0;
+  padding: 0 0 0 23px;
+  background: none;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  line-height: 28px;
+  color: $black;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  @media (max-width: $desktop) {
+    font-size: 17px;
+    line-height: 28px;
+    padding-left: 16px;
+  }
+}
+
+.Dot {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: $primary;
+  border-radius: 50%;
+}

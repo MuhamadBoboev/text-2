@@ -1,0 +1,157 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.ModalHeader {
+  .Title {
+    margin: 0 0 40px;
+
+    @media (max-width: $desktop) {
+      margin: 0 0 28px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 24px;
+    }
+  }
+
+  .Divider {
+    margin-bottom: 40px;
+
+    @media (max-width: $tablet) {
+      margin-bottom: 28px;
+    }
+  }
+
+  .Breadcrumbs {
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    @media (max-width: $mobileLarge) {
+      display: none;
+    }
+  }
+}
+
+.Content {
+}
+
+.MenuList {
+  margin: 20px 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.Item {
+  padding: 20px 24px 20px 40px;
+  border: 1px solid $grayLight;
+  border-radius: 8px;
+  min-height: 132px;
+  margin-bottom: 40px;
+  position: relative;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 250ms;
+
+  svg {
+    stroke: $primary;
+    position: absolute;
+    right: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: $tablet) {
+      right: 24px;
+    }
+
+    @media (max-width: $tablet) {
+      right: 16px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: 16px;
+    padding-right: 35px;
+    min-height: auto;
+    border: none;
+    box-shadow:
+      0px 0px 0.5px rgba(66, 71, 76, 0.32),
+      0px 4px 8px rgba(66, 71, 76, 0.05),
+      0px 4px 40px #eeeeee;
+    border-radius: 13px;
+    margin-bottom: 24px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    color: $black;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 28px;
+    margin: 0 0 16px;
+
+    @media (max-width: $desktop) {
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: $tablet) {
+      color: rgba(26, 26, 26, 0.9);
+      font-family: 'SF Pro Text', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: -0.24px;
+      margin: 0 0 2px;
+    }
+  }
+
+  p {
+    max-width: 234px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: $gray;
+    margin: 0;
+
+    @media (max-width: $desktop) {
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    @media (max-width: $tablet) {
+      color: rgba(26, 26, 26, 0.55);
+      font-family: 'SF Pro Text', sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: -0.078px;
+      margin: 0 0 2px;
+    }
+  }
+}
+
+.Link {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.Active {
+  transform: scale(0.97);
+}
+
+.Phone {
+  text-decoration: none;
+  color: $gray;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

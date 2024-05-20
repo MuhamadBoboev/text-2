@@ -1,0 +1,7 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Header {
+  flex-shrink: 0;
+  //position: relative;
+}

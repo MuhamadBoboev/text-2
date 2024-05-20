@@ -1,0 +1,91 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.SelectWrapper {
+  position: relative;
+  max-width: 240px;
+  width: 100%;
+
+  @media (max-width: $desktop) {
+    max-width: 160px;
+  }
+
+  @media (max-width: $tablet) {
+    max-width: 140px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    max-width: 128px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    background: url('/assets/icons/arrow-down.svg') no-repeat center;
+    background-size: 14px 7px;
+    pointer-events: none;
+
+    @media (max-width: $desktop) {
+      width: 10px;
+      height: 6px;
+      background-size: 10px 6px;
+      right: 11px;
+    }
+  }
+}
+
+.Select {
+  width: 100%;
+  border: 1px solid $grayLight;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition-property: border;
+  transition-duration: 200ms;
+  position: relative;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  max-width: 240px;
+  height: 44px;
+  font-size: 13px;
+  line-height: 1;
+  color: $gray;
+  background: none;
+
+  .Placeholder {
+    display: none;
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 1;
+    padding: 6px 12px;
+    height: 32px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.078px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: $gray2;
+  }
+}

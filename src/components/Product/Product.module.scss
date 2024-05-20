@@ -1,0 +1,615 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Product {
+  margin: 124px 0 120px;
+
+  @media (max-width: $desktop) {
+    margin: 80px 0;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 60px 0;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin: 40px 0;
+  }
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $tablet) {
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: 1208px;
+  }
+}
+
+.Breadcrumbs {
+  //margin-bottom: 20px;
+}
+
+.Right {
+  flex-basis: 60.86%;
+  margin-left: 4.34%;
+  flex-shrink: 1;
+  overflow: hidden;
+
+  @media (max-width: $tablet) {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+}
+
+.Top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.BrandAndTags {
+  display: flex;
+  align-items: center;
+}
+
+.TagsMobile {
+  margin-left: auto;
+  display: none;
+
+  @media (max-width: $mobileLarge) {
+    display: block;
+  }
+}
+
+.Brand {
+  width: fit-content;
+  margin: 0 15px 0;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    border: 1px solid $primary;
+  }
+
+  @include miniText {
+    color: $gray;
+    padding: 4px 8px;
+    border: 1px solid $grayLight;
+    border-radius: 8px;
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.BrandMobile {
+  width: fit-content;
+  margin: 0 15px 0;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    border: 1px solid $primary;
+  }
+
+  @include miniText {
+    color: $gray;
+    padding: 4px 8px;
+    border: 1px solid $grayLight;
+    border-radius: 8px;
+  }
+}
+
+.NameAndPrice {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+
+  .Title {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0 24px 0 0;
+
+    @media (max-width: $desktop) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @media (max-width: $mobileLarge) {
+      margin: 0;
+      font-family: 'SF Pro Display', sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: 0.38px;
+    }
+  }
+}
+
+.Prices {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+
+  @media (max-width: $tablet) {
+    flex-wrap: wrap;
+    text-align: right;
+    justify-content: flex-end;
+  }
+
+  @media (max-width: $mobileLarge) {
+    flex-direction: row;
+    order: -1;
+    flex-basis: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+.PricesWrapper {
+  text-align: left;
+}
+
+.Price {
+  margin: 0 0 8px 20px;
+  white-space: nowrap;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 32px;
+  color: $secondary;
+
+  &.Strike {
+    color: $gray;
+    text-decoration: line-through;
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.38px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    order: -1;
+    margin-bottom: 8px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: 0.35px;
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
+
+.Code {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: $gray2;
+
+  @media (max-width: $desktop) {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+
+  @media (max-width: $mobileLarge) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.078px;
+    color: $gray;
+    margin: 0 0 28px;
+  }
+}
+
+.DescriptionHide {
+  &::after {
+    content: ' Скрыть';
+    cursor: pointer;
+    color: $gray2;
+    margin-left: 15px;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  //display: -webkit-box;
+  //display: -moz-box;
+  //-webkit-box-orient: vertical;
+  //-moz-box-orient: vertical;
+  //overflow: hidden;
+  //line-clamp: 4;
+  //-webkit-line-clamp: 4;
+}
+
+.DescriptionShow {
+  &::after {
+    content: ' Еще';
+    cursor: pointer;
+    color: $gray2;
+    margin-left: 15px;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.ShowDescription {
+  &::after {
+    display: none;
+  }
+}
+
+.MoreDescription {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  font-family: 'Manrope', sans-serif;
+  color: $gray;
+  cursor: pointer;
+}
+
+.Description {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray;
+  margin-bottom: 24px;
+  position: relative;
+
+  p {
+    margin: 0 0 10px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: $gray;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+
+    p {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+}
+
+.DescriptionAccordion {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.InfoTablet {
+  display: none;
+
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.InfoList {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  dt,
+  dd {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.078px;
+    color: $gray;
+  }
+
+  .InfoBrand {
+    color: $secondary;
+    font-weight: 700;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .InfoDiscount {
+    color: $green;
+  }
+}
+
+.Panels {
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-top: -60px;
+  padding-top: 100px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 24px;
+    margin-top: 24px;
+    margin-top: -76px;
+    padding-top: 100px;
+  }
+}
+
+.Attributes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.Attribute {
+  margin-right: 40px;
+  margin-bottom: 28px;
+  flex-basis: 100%;
+
+  @media (max-width: $mobileLarge) {
+    margin-right: 0;
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.Colors {
+  //width: 100%;
+  //margin-right: 0;
+}
+
+.Counter {
+  margin-bottom: 48px;
+  margin-right: 12px;
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 28px;
+  }
+}
+
+.CounterTitle {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: $black;
+  margin: 0 0 8px;
+}
+
+.BuyButton,
+.ToCart {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+
+  @media (max-width: $desktop) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.ToCart {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  margin-bottom: 20px;
+
+  &:hover {
+    color: $gray;
+    border-color: $gray;
+  }
+
+  &:active {
+    color: $black;
+    border-color: $black;
+  }
+}
+
+.ProductStatus {
+  font-size: 12px;
+  line-height: 150%;
+  color: $green;
+  text-align: center;
+  margin: 0 0 40px;
+}
+
+.Green {
+  color: $green;
+}
+
+.Red {
+  color: $red;
+}
+
+.Advantages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  //display: grid;
+  //grid-template-columns: repeat(auto-fill, 172px);
+  //grid-column-gap: 2.8%;
+  display: flex;
+
+  @media (max-width: $mobileLarge) {
+    //flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 375px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+.Advantage {
+  border-radius: 8px;
+  border: 1px solid $grayLight;
+  padding: 12px 12px 12px 40px;
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @media (max-width: $desktop) {
+    padding: 8px 8px 8px 32px;
+    flex-basis: 21.16%;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 20px;
+    flex-basis: auto;
+    padding: 8px 8px 8px 28px;
+    margin-right: 16px;
+
+    //&:nth-of-type(2) {
+    //  margin-right: 0;
+    //}
+  }
+
+  @media (max-width: 410px) {
+    padding: 6px 6px 6px 24px;
+  }
+}
+
+.AdvantageIcon {
+  fill: $black;
+  stroke: $black;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  @media (max-width: $desktop) {
+    width: 16px;
+    height: 16px;
+    top: 8px;
+    left: 8px;
+  }
+  @media (max-width: 410px) {
+    top: 6px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.AdvantageTitle {
+  margin: 0;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 20px;
+  color: $black;
+
+  @media (max-width: $desktop) {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    margin-bottom: 4px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 410px) {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+.AdvantageDescription {
+  margin: 0;
+  @include miniText {
+    color: $black;
+  }
+
+  @media (max-width: $desktop) {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Divider {
+  margin: 24px 0 0;
+}

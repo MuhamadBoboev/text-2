@@ -1,0 +1,206 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.FormMobile {
+  display: flex;
+  align-items: center;
+  // margin-bottom: 70px;
+
+  @media (max-width: $tablet) {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  @media (min-width: $mobileLarge) {
+    display: none;
+  }
+  @media (max-width: $mobileLarge) {
+    flex-wrap: wrap;
+  }
+
+  .TabHeader {
+    margin-bottom: 28px;
+  }
+
+  .Input {
+    position: relative;
+
+    button {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      font-weight: 400;
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+  }
+
+  .InputWrapper {
+    span {
+      display: none;
+    }
+  }
+
+  .InputLabel {
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .InputGroup {
+    @media (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.Head {
+  .Text {
+    h3,
+    p {
+      margin: 0;
+    }
+  }
+
+  @media (min-width: $mobileLarge) {
+    margin-right: 4.34%;
+    .Text {
+      display: none;
+    }
+  }
+  @media (max-width: $mobileLarge) {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}
+
+.Picture {
+  width: 240px;
+  height: 240px;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $mobileLarge) {
+    margin-right: 0;
+    width: 44px;
+    height: 44px;
+    //border: 1px solid $black;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.File {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.Avatar {
+  width: 100%;
+  height: 100%;
+  max-width: 80px;
+  fill: $black;
+}
+
+.Row1 {
+  flex-grow: 1;
+  margin-right: 4.34%;
+
+  @media (max-width: $desktop) {
+    margin-right: 4.85%;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  @media (max-width: $mobileLarge) {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
+
+.Phone {
+  margin-top: 8px !important;
+}
+
+.Row2 {
+  flex-grow: 1;
+
+  @media (max-width: $mobileLarge) {
+    flex-basis: 100%;
+  }
+}
+
+.Sex {
+  .Label {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    line-height: 20px;
+    color: rgba(68, 68, 68, 0.8);
+    @media (min-width: 768px) {
+      font-size: 13px;
+    }
+    @media (max-width: 768px) {
+      font-size: 11px;
+    }
+  }
+
+  .Row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: 768px) {
+      padding: 12px 0;
+    }
+
+    .radios {
+      display: flex;
+    }
+
+    a {
+      font-size: 13px;
+      text-decoration: dotted;
+    }
+  }
+}
+
+.Tab {
+  width: 100%;
+  margin-top: 26px;
+}
+
+.Select {
+  outline: none;
+
+  option {
+    padding: 0;
+  }
+}
+
+.Button {
+  margin-top: 20px;
+}
+
+.UpdateProfile {
+  margin-left: 0;
+  width: 100%;
+  margin-top: 20px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

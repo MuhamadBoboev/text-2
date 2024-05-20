@@ -1,0 +1,379 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Card {
+  //max-width: 528px;
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  border: 1px solid $grayLight;
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+
+  @media (max-width: 840px) {
+    border: none;
+    background: #fff;
+    box-shadow:
+      0 0 0.5px rgba(66, 71, 76, 0.32),
+      0 4px 8px rgba(66, 71, 76, 0.05),
+      0 4px 40px #eee;
+  }
+
+  @media (max-width: $mobileLarge) {
+    flex-wrap: wrap;
+  }
+}
+
+.Delete {
+  width: 24px;
+  height: 24px;
+  background: none;
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  right: 16px;
+  top: 20px;
+
+  @media (max-width: $desktop) {
+    //right: auto;
+    //left: 16px;
+    top: 16px;
+  }
+
+  svg {
+    fill: $gray;
+    stroke: $gray;
+  }
+}
+
+.ImgWrapper {
+  position: relative;
+  @media (max-width: $mobileLarge) {
+    display: flex;
+    flex-grow: 1;
+    margin-right: 24px;
+  }
+}
+
+.Img {
+  width: 212px;
+  height: 212px;
+  flex-shrink: 0;
+  margin-right: 20px;
+
+  @media (max-width: $desktop) {
+    width: 140px;
+    height: 140px;
+    align-self: center;
+  }
+
+  @media (max-width: $tablet) {
+    width: 194px;
+    height: 194px;
+  }
+
+  @media (max-width: 540px) {
+    max-width: 180px;
+    width: 100%;
+    height: 180px;
+    flex-shrink: 1;
+  }
+
+  @media (max-width: $mobileLarge) {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    //font-size: 0;
+  }
+}
+
+.CategoryMobile {
+  font-family: 'SF Pro Text', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.078px;
+}
+
+.InfoMobile {
+  display: none;
+
+  @media (max-width: $mobileLarge) {
+    display: block;
+  }
+}
+
+.Tags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.Tag {
+  margin-bottom: 5px;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.Attributes {
+}
+
+.AttributeList {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.AttributeItem {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  margin-right: 15px;
+}
+
+.Attribute {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  margin-bottom: 20px;
+
+  .RadioLabel {
+    padding-left: 24px;
+  }
+
+  .RadioText {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .RadioInput {
+    &:checked ~ .Radio {
+      border-width: 4px;
+    }
+  }
+
+  .Radio {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+.AttributeTitle {
+  margin: -2px 20px 12px 0;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.LinkName {
+  text-decoration: none;
+}
+
+.Name {
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 24px;
+  color: $black;
+  margin: 0 25px 20px 0;
+  display: -webkit-box;
+  display: -moz-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.CounterWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+
+  .IncrementCounter,
+  .DecrementCounter {
+    width: 24px;
+    height: 24px;
+    background: none;
+    color: $black;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .InputCounter {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    pointer-events: none;
+    margin: 0 4px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.CounterTitle {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray;
+  margin: 0 8px 0 0;
+}
+
+.ProductStatus {
+  font-size: 12px;
+  line-height: 150%;
+  color: $green;
+  text-align: left;
+  margin: auto 0 0;
+}
+
+.Bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+
+  @media (max-width: $desktop) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: $tablet) {
+    flex-wrap: nowrap;
+    align-items: flex-end;
+  }
+}
+
+.ToCart {
+  background: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 20px;
+  color: $black;
+  border-radius: 8px;
+  border: 1px solid $grayLight;
+  padding: 6px;
+  max-width: 145px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  //transition-property: color;
+  //transition-duration: 250ms;
+  margin-right: 12px;
+
+  @media (max-width: $desktop) and (min-width: 841px) {
+    flex-grow: 1;
+    max-width: none;
+    margin-right: 0;
+    order: -1;
+  }
+
+  &:hover {
+    color: $secondary;
+
+    svg {
+      fill: $secondary;
+      stroke: $secondary;
+    }
+  }
+
+  svg {
+    fill: $black;
+    stroke: $black;
+    margin-right: 6px;
+    //transition-property: fill, stroke;
+    //transition-duration: 250ms;
+  }
+}
+
+.NameMobile {
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  display: -webkit-box;
+  display: -moz-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: $black;
+}
+
+.PriceWrapper {
+  text-align: right;
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 1;
+    order: -1;
+    //margin-bottom: 8px;
+    margin-right: 15px !important;
+  }
+
+  @media (max-width: 840px) {
+    margin-top: 0;
+  }
+
+  @media (max-width: $tablet) {
+    order: 0;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+}
+
+.Price {
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 24px;
+  color: $primary;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+.Strike {
+  text-decoration: line-through;
+  color: $grayLight;
+  margin-left: 0;
+}

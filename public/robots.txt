@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /*products?q=*
+Disallow: /*brands=82*
+Disallow: /*brands=55*
+Disallow: /*brands=40*
+Disallow: /*brands=18*
+Disallow: /*brands=74*
+Disallow: /*brands=93*
+Disallow: /*brands=89*
+Disallow: /*brands=77*

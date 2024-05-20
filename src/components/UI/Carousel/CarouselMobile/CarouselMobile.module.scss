@@ -1,0 +1,29 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.List {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 30.57%);
+  grid-row-gap: 20px;
+  grid-column-gap: 3.28%;
+  justify-content: space-between;
+
+  @media (max-width: 599px) {
+    grid-template-columns: repeat(2, 200px);
+    justify-content: center;
+    grid-row-gap: 26px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    grid-template-columns: repeat(2, minmax(130px, 192px));
+    grid-column-gap: 4%;
+    grid-row-gap: 18px;
+  }
+
+  .Card {
+    margin: 0 auto !important;
+  }
+}

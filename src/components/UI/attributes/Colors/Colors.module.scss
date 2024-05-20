@@ -1,0 +1,137 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Volume {
+  //width: 100%;
+  max-width: 351px;
+  margin-left: 15px;
+
+  @media (max-width: $desktop) {
+    max-width: 351px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-left: 0;
+    max-width: none;
+    overflow: hidden;
+    margin-top: -100px;
+    padding-top: 100px;
+  }
+}
+
+.Title {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 0 8px;
+}
+
+.Swiper {
+  padding: 30px 15px;
+  margin: -30px -15px 0;
+  margin-top: -100px !important;
+  padding-top: 100px !important;
+}
+
+.Item {
+  //margin-right: 20px;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.Label {
+  //padding: 12px 24px;
+  cursor: pointer;
+
+  .Radio {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .Radio:checked {
+    & ~ .Name {
+      //color: #fff;
+      //background: $primary;
+      //border-color: $primary;
+      //border: 1px solid #CC3333;
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $black;
+        bottom: -20px;
+        left: 50%;
+
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .Radio:disabled {
+    & ~ .Name {
+      opacity: 0.6;
+      //background: none;
+      //border-color: lighten($primary, 70%);
+      //color: lighten($primary, 70%);
+      //cursor: not-allowed;
+    }
+  }
+}
+
+.Name {
+  //padding: 12px 24px;
+  display: inline-flex;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 0;
+  line-height: 0;
+  transition: 250ms;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid transparent;
+  position: relative;
+
+  &:hover {
+    .Chip {
+      opacity: 1;
+    }
+  }
+}
+
+.Radio {
+  @include visually-hidden;
+}
+
+.Checked {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.Chip {
+  font-size: 12px;
+  line-height: 1;
+  background: $black;
+  display: block;
+  //height: 12px;
+  color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 250ms;
+}

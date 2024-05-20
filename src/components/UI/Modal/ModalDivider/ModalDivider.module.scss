@@ -1,0 +1,10 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Divider {
+  margin-bottom: 40px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 28px;
+  }
+}

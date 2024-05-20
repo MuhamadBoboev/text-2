@@ -1,0 +1,128 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Section {
+  margin: 120px 0;
+
+  @media (max-width: $desktop) {
+    margin: 80px 0 100px;
+  }
+
+  @media (max-width: $tablet) {
+    margin: 60px 0 84px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin: 40px 0;
+  }
+}
+
+.Breadcrumbs {
+  margin-bottom: 24px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 28px;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    margin-bottom: 20px;
+  }
+}
+
+.Title {
+  margin: 0 24px 0 0;
+}
+
+.HeaderRight {
+  display: flex;
+  margin-left: auto;
+  flex-grow: 1;
+}
+
+.Button {
+  align-items: center;
+  display: flex;
+  line-height: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 20px;
+  margin-left: auto;
+
+  svg {
+    stroke: #fff;
+    margin-right: 8px;
+  }
+}
+
+.List {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 47.82%);
+  justify-content: space-between;
+  grid-column-gap: 4.34%;
+  grid-row-gap: 48px;
+
+  @media (max-width: 840px) {
+    grid-template-columns: minmax(auto, 608px);
+    //grid-auto-rows: 309px;
+    justify-content: center;
+    grid-row-gap: 60px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    grid-row-gap: 24px;
+  }
+}
+
+.Empty {
+  margin-top: 160px;
+  margin-bottom: 80px;
+}
+
+.EmptyTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.EmptySubtitle {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 28px;
+  color: $gray;
+  text-align: center;
+}
+
+.Button {
+  display: block;
+  margin: 40px auto 0;
+  width: fit-content;
+}

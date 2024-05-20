@@ -1,0 +1,141 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Card {
+  border: 1px solid $grayLight;
+  border-radius: 8px;
+  padding: 32px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $desktop) {
+    padding: 24px;
+  }
+}
+
+.Stars {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+
+  @media (max-width: $desktop) {
+    margin-bottom: 20px;
+  }
+}
+
+.Rate {
+  //background-image: url("/assets/icons/star.svg");
+  //background-size: 20px 19px;
+  margin-right: 4px;
+  stroke: $grayLight;
+  fill: none;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  svg {
+    //width: 18px;
+    //height: auto;
+  }
+}
+
+.Fill {
+  fill: $primary;
+  stroke: $primary;
+}
+
+.Review {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $black;
+  display: -webkit-box;
+  display: -moz-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 24px;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+    color: $gray;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $tablet) {
+    font-family: 'SF Pro Text', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $gray2;
+    //margin-bottom: 8px;
+  }
+}
+
+.Bottom {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+
+.Avatar {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @media (max-width: $desktop) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.Info {
+  width: 100%;
+  overflow: hidden;
+}
+
+.Author {
+  margin: 0;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 24px;
+  color: $black;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+}
+
+.Job {
+  margin: 0;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $gray;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  overflow: hidden;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+    color: $gray2;
+  }
+}

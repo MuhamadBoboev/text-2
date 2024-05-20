@@ -1,0 +1,59 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+
+  &:focus {
+    outline: #000;
+  }
+}
+
+.Input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+
+  &:checked {
+    ~ .Radio {
+      background-color: #fff;
+      border: 6px solid $primary;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.Text {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  color: $gray;
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
+}
+
+.Radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  background: $primary;
+}

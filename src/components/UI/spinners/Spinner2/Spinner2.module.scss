@@ -1,0 +1,39 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+$border: 3px;
+$yellow: #b29e5b;
+
+.Spinner {
+  //width: 56px;
+  //height: 56px;
+  border-radius: 50%;
+  background: $primary;
+  -webkit-mask: radial-gradient(
+    circle closest-side at 50% 40%,
+    #0000 94%,
+    #000
+  );
+  transform-origin: 50% 40%;
+  animation:
+    spinner-pl92zb 1s infinite linear,
+    animateSpinner 2s infinite linear;
+}
+
+@keyframes animateSpinner {
+  0% {
+    background: $primary;
+  }
+  50% {
+    background: $yellow;
+  }
+  100% {
+    background: $primary;
+  }
+}
+
+@keyframes spinner-pl92zb {
+  100% {
+    transform: rotate(1turn);
+  }
+}

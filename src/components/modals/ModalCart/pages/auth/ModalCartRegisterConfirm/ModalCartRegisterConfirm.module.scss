@@ -1,0 +1,175 @@
+@import '../../../../../../styles/variables';
+@import '../../../../../../styles/mixins';
+
+.ModalHeader {
+  .Title {
+    margin: 0 0 35px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .Header {
+    margin-bottom: 40px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .Divider {
+    margin-bottom: 0;
+  }
+
+  .Breadcrumbs {
+    margin-bottom: 20px;
+
+    @media (max-width: $mobileLarge) {
+      display: none;
+    }
+  }
+}
+
+.ModalContent {
+  .InputGroup {
+    //margin: 0;
+    //margin-bottom: 32px;
+  }
+
+  .InputConfirmGroup {
+    margin-bottom: 0;
+    margin-left: 48px;
+    flex-grow: 1;
+
+    @media (max-width: $desktop) {
+      margin-left: 40px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-left: 20px;
+    }
+  }
+
+  .ConfirmButton {
+    font-weight: 500;
+    color: $gray;
+
+    &:hover {
+      color: $primary;
+      border-color: $primary;
+    }
+
+    &:disabled {
+      color: $gray;
+      border-color: $gray;
+      opacity: 0.3;
+    }
+
+    @media (max-width: $desktop) {
+      padding: 9px 26px;
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    @media (max-width: $tablet) {
+      font-family: 'Manrope', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 12px 24px;
+      white-space: nowrap;
+      color: $black;
+    }
+  }
+
+  .SendButton {
+    margin-top: 20px;
+
+    @media (max-width: $desktop) {
+      margin-top: 40px;
+      padding: 10px 0;
+    }
+
+    @media (max-width: $tablet) {
+      padding: 10px 0;
+      font-family: 'SF Pro Text', sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: -0.408px;
+    }
+  }
+}
+
+.promoCode {
+  position: relative;
+}
+
+.applyPromoCode {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  font-weight: 700;
+  transition: all 250ms;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.ConfirmPhone {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Form {
+  margin-top: 40px;
+
+  @media (max-width: $mobileLarge) {
+    margin-top: 30px;
+  }
+}
+
+.SignIn {
+  text-align: center;
+  margin-top: 40px;
+  color: $gray;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+
+  @media (max-width: $desktop) {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 20px;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.CloseButton {
+  margin-top: 20px;
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+}

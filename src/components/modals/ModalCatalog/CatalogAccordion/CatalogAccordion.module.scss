@@ -1,0 +1,49 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Accordion {
+  margin-bottom: 48px;
+}
+
+.Title {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'SF Pro Text', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.408px;
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $grayLight;
+  position: relative;
+  color: $black;
+
+  &.Open {
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid $primary;
+    border-right: 3px solid $primary;
+    box-sizing: border-box;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    transition-property: transform;
+    transition-duration: 150ms;
+  }
+}
+
+.Content {
+  overflow: hidden;
+}

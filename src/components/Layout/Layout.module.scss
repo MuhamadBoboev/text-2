@@ -1,0 +1,69 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Content {
+  flex: 1 0 auto;
+}
+
+.Buttons {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  z-index: 5;
+}
+
+.PanelButton {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  margin-top: 20px;
+
+  &:hover {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (max-width: $tablet) {
+    display: none;
+  }
+
+  svg {
+    stroke: $primary;
+    fill: $primary;
+  }
+}
+
+.Counter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: $secondary;
+  color: #fff;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1;
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+
+  &.Small {
+    font-size: 13px;
+  }
+}

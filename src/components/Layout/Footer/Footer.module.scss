@@ -1,0 +1,94 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Footer {
+  background: $whiteGray;
+  padding-top: 57px;
+
+  @media (max-width: $desktop) {
+    padding-top: 40px;
+  }
+
+  @media (max-width: $mobileLarge) {
+    display: none;
+  }
+
+  .Wrapper {
+    margin-bottom: 80px;
+
+    @media (max-width: $desktop) {
+      margin-bottom: 43px;
+    }
+  }
+}
+
+.Top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 58px;
+}
+
+.Left {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $desktop) {
+    flex-basis: 32%;
+  }
+}
+
+.Logo {
+  display: block;
+  width: fit-content;
+  margin-bottom: 43px;
+
+  @media (max-width: $tablet) {
+    //display: none;
+  }
+}
+
+.Form {
+  @media (max-width: $desktop) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .Button {
+    padding: 12px 24px;
+    margin-left: 24px;
+
+    @media (max-width: $desktop) {
+      flex-basis: 100%;
+      margin-left: 0;
+      margin-top: 24px;
+    }
+  }
+}
+
+.FormText {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: $black;
+  margin-bottom: 24px;
+}
+
+.Input {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: $black;
+  border: 1px solid $grayLight;
+  border-radius: 8px;
+  height: 48px;
+  background: transparent;
+  width: 300px;
+  padding: 12px;
+  box-sizing: border-box;
+
+  @media (max-width: $desktop) {
+    width: auto;
+    flex-basis: 100%;
+  }
+}

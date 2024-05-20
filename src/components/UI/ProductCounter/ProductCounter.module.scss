@@ -1,0 +1,48 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.Counter {
+  display: flex;
+}
+
+.Increment,
+.Decrement {
+  color: #fff;
+  background: $primary;
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  border: none;
+  font-size: 19px;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+}
+
+.Input {
+  margin: 0 16px;
+  border-radius: 8px;
+  border: 1px solid $grayLight;
+  padding: 12px;
+  box-sizing: border-box;
+  width: 48px;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: $black;
+  height: 48px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  -moz-appearance: textfield;
+}
